@@ -9,8 +9,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	const referringURL = ctx.req.headers?.referer || null;
 	const pathArr = ctx.query.postpath as Array<string>;
 	const path = pathArr.join('/');
-	const encodedPath = pathArr.map(encodeURIComponent).join('/');
-
 	console.log(path);
 	const fbclid = ctx.query.fbclid;
 
@@ -27,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	}
 	const query = gql`
 		{
-			post(id: "/${encodedPath}/", idType: URI) {
+			post(id: "/${path}/", idType: URI) {
 				id
 				excerpt
 				title
