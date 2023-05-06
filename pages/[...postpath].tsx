@@ -40,6 +40,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 				}
 				seo{
 				opengraphTitle
+				title
       opengraphImage{
         sourceUrl
       }
