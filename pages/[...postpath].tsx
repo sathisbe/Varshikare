@@ -79,10 +79,11 @@ const Post: React.FC<PostProps> = (props) => {
 
 	// to remove tags from excerpt
 	const removeTags = (str: string) => {
-		if (str === null || str === '') return '';
-		else str = str.toString();
-		return str.replace(/(<([^>]+)>)/gi, '').replace(/\[[^\]]*\]/, '');
-	};
+  if (str === null || str === '') return '';
+  else str = str.toString();
+  return str.replace(/(<([^>]+)>)/gi, '').replace(/\[[^\]]*\]/, '').trim();
+};
+
 
 	return (
 		<>
