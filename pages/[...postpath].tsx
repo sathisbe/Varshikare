@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 				permanent: false,
 				destination: `${
 					endpoint.replace(/(\/graphql\/)/, '/') + encodeURI(path as string)
-				}?utm_source=fb_page&utm_medium=JeniferVer&utm_campaign=SQR`,
+				}?utm_source=fb_page&utm_medium=TamilVideoVer&utm_campaign=SQR`,
 			},
 		};
 	}
@@ -107,7 +107,7 @@ const Post: React.FC<PostProps> = (props) => {
 				<title>{removeTags(post.excerpt)}</title>
 			</Head>
 			<div className="post-container">
-				<h1>{post.title}</h1>
+				<h1>{post.seo.title}</h1>
 				<img
 					src={post.featuredImage.node.sourceUrl}
 					alt={post.featuredImage.node.altText || post.title}
