@@ -7,6 +7,7 @@ import { request, gql } from 'graphql-request'
 type Post = {
   id: string;
   title: string;
+  uri: string;
   date: string;
   featuredImage: {
     node: {
@@ -36,7 +37,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
         <div className={styles.grid}>
           {posts.map((post) => (
-            <a key={post.id} href={`/posts/${post.id}`} className={styles.card}>
+            <a key={post.uri} href={`${post.uri}`} className={styles.card}>
               <div className={styles.imageContainer}>
                 <Image src={post.featuredImage.node.sourceUrl} alt="Post Image" layout="fill" objectFit="cover" />
               </div>
