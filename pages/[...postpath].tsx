@@ -39,6 +39,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 					}
 				}
 				seo{
+				title
       opengraphImage{
         sourceUrl
       }
@@ -88,7 +89,7 @@ const Post: React.FC<PostProps> = (props) => {
 	return (
 		<>
 			<Head>
-				<meta property="og:title" content={post.title} />
+				<meta property="og:title" content={post.seo.title} />
 				<meta name="description" content={removeTags(post.excerpt)} />
 				<link rel="canonical" href={`https://${host}/${path}`} />
 				<meta property="og:description" content={removeTags(post.excerpt)} />
