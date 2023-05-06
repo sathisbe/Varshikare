@@ -84,7 +84,7 @@ export async function getStaticProps() {
     }
   `;
 
-  const data = await request('https://your-graphql-endpoint.com', query);
+  const data = await request('https://theriuma.net/graphql', query);
 
   return {
     props: {
